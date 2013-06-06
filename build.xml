@@ -1,0 +1,25 @@
+<project name="si1" basedir="." default="compilar">
+
+    <property name="src" location="ufcg/si1"/>
+    <property name="arq" value="Lab01" />
+
+    <target name="compilar">
+        <javac srcdir="${src}"
+        destdir="${src}" />
+    </target>
+
+    <target name="executar" depends="compilar">
+        <java classname="${arq}" >
+            <classpath path="${src}" />
+        </java>
+    </target>
+
+    <target name="testar" depends="compilar">
+        <java classname="TesteLab01" >
+            <classpath path="${src}" />
+                <path location="${junit.jar"/>
+        </java>
+    </target>
+
+
+</project> 
